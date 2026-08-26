@@ -250,6 +250,8 @@ body{font-family:"Inter",ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe U
 .hero-form-grid label small{font-weight:500;color:var(--muted)}
 .hero-form-grid input:not([type="file"]),.hero-form-grid select{height:46px}
 .hero-optional-fields{margin-top:12px}
+.hero-optional-fields[hidden] {display: none}
+.hero-optional-fields:not([hidden]) {display: grid}
 .hero-details-toggle{width:100%;min-height:43px;margin-top:12px;padding:0 12px;border:1px solid var(--line);border-radius:9px;background:#f8faf8;color:var(--green-850);display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;text-align:left;font-weight:750;font-size:.8rem}
 .hero-details-toggle small{font-weight:600;color:var(--muted);font-size:.7rem}
 .hero-details-toggle b{font-size:1.15rem;font-weight:500;line-height:1}

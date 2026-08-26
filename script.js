@@ -52,16 +52,26 @@
   const detailsToggle = qs('#hero-details-toggle');
   const optionalFields = qs('#hero-optional-fields');
   const formStep = qs('#hero-form-step');
-  detailsToggle?.addEventListener('click', () => {
-    const expanded = detailsToggle.getAttribute('aria-expanded') === 'true';
-    detailsToggle.setAttribute('aria-expanded', String(!expanded));
-    if (optionalFields) optionalFields.hidden = expanded;
-    const icon = qs('b', detailsToggle);
-    if (icon) icon.textContent = expanded ? '+' : '−';
-    const label = qs('span', detailsToggle);
-    if (label) label.textContent = expanded ? 'Add more job details' : 'Hide extra job details';
-    if (formStep) formStep.textContent = expanded ? 'Step 1 of 2 · Contact & service' : 'Step 2 of 2 · Extra job details';
-  });
+
+  if (detailsToggle && optionalFields) {
+    const setDetailsState = (expanded) => {
+      detailsToggle.setAttribute('aria-expanded', String(expanded));
+      optionalFields.hidden = !expanded;
+      const icon = qs('b', detailsToggle);
+      if (icon) icon.textContent = expanded ? '−' : '+';
+      const label = qs('span', detailsToggle);
+      if (label) label.textContent = expanded ? 'Hide extra job details' : 'Add more job details'
+      if (formStep) formStep.textContent = expanded ? 'Step 2 of 2 · Extra job details' : 'Step 1 of 2 · Contact & service'
+    };
+
+    // Ensure the page always starts in the correct collapsed state.
+    setDetailsState(false);
+
+    detailsToggle.addEventListener('click', () => {
+      const expanded = detailsToggle.getAttribute('aria-expanded') === 'true';
+      setDetailsState(!expanded);
+    });
+  }
 
   // Accessible inline validation for the hero form.
   const fieldLabel = (field) => field?.closest('label');
