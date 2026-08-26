@@ -1,24 +1,3 @@
-
-
-const projectFallbacks = {
-  "https://vanguardfencing.com.au/images/projects/colorbond-tarneit-after.jpg": "assets/project-tarneit.jpg",
-  "https://vanguardfencing.com.au/images/projects/sliding-gate-werribee-after.jpg": "assets/project-werribee.jpg",
-  "https://vanguardfencing.com.au/images/projects/timber-hoppers-after.jpg": "assets/project-hoppers.jpg",
-  "https://vanguardfencing.com.au/images/projects/colorbond-gate-werribee-after.jpg": "assets/project-truganina.jpg",
-  "https://vanguardfencing.com.au/images/projects/aluminium-tarneit-after.jpg": "assets/project-pointcook.jpg",
-  "https://vanguardfencing.com.au/images/projects/picket-scalloped-altona.jpg": "assets/project-altona.jpg"
-};
-
-// Live Vanguard photography with resilient offline fallbacks.
-document.querySelectorAll('img[data-fallback]').forEach((img) => {
-  img.addEventListener('error', () => {
-    const fallback = img.dataset.fallback;
-    if (fallback && img.getAttribute('src') !== fallback) {
-      img.src = fallback;
-    }
-  }, { once: true });
-});
-
 (() => {
   const qs = (s, root = document) => root.querySelector(s);
   const qsa = (s, root = document) => [...root.querySelectorAll(s)];
@@ -71,6 +50,50 @@ document.querySelectorAll('img[data-fallback]').forEach((img) => {
     }, 1800);
   });
 
+  // Embedded hero quote form
+  const heroQuoteForm = qs('#hero-quote-form');
+  const heroFormSuccess = qs('#hero-form-success');
+  qsa('.js-focus-hero-quote').forEach(trigger => trigger.addEventListener('click', () => {
+    heroQuoteForm?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => qs('input[name="suburb"]', heroQuoteForm)?.focus(), 320);
+  }));
+
+  heroQuoteForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!heroQuoteForm.reportValidity()) return;
+    const submitter = e.submitter;
+    if (heroFormSuccess) heroFormSuccess.hidden = false;
+    if (!submitter) return;
+    const original = submitter.textContent;
+    submitter.disabled = true;
+    submitter.textContent = 'Request Ready ✓';
+    setTimeout(() => {
+      submitter.disabled = false;
+      submitter.textContent = original;
+    }, 1800);
+  });
+
+  const heroUploadInput = qs('#hero-quote-form input[name="photo"]');
+  const heroUploadMain = qs('.hero-upload-main');
+  const heroUpload = qs('.hero-upload');
+  const updateHeroUploadText = () => {
+    if (!heroUploadMain || !heroUploadInput) return;
+    const files = heroUploadInput.files || [];
+    heroUploadMain.textContent = files.length
+      ? (files.length === 1 ? files[0].name : `${files.length} files selected`)
+      : '↥  Choose files or drag and drop';
+  };
+  heroUploadInput?.addEventListener('change', updateHeroUploadText);
+  heroUpload?.addEventListener('dragover', (e) => { e.preventDefault(); heroUpload.classList.add('is-dragging'); });
+  heroUpload?.addEventListener('dragleave', () => heroUpload.classList.remove('is-dragging'));
+  heroUpload?.addEventListener('drop', (e) => {
+    e.preventDefault();
+    heroUpload.classList.remove('is-dragging');
+    if (!heroUploadInput || !e.dataTransfer?.files?.length) return;
+    heroUploadInput.files = e.dataTransfer.files;
+    updateHeroUploadText();
+  });
+
   // FAQ accordion
   qsa('.faq-item button').forEach(button => {
     button.addEventListener('click', () => {
@@ -114,12 +137,9 @@ document.querySelectorAll('img[data-fallback]').forEach((img) => {
   const lbCaption = qs('#lightbox-caption');
   qsa('[data-lightbox]').forEach(card => card.addEventListener('click', () => {
     if (!lightbox?.showModal) return;
-    if (lbImg) {
-      lbImg.dataset.fallback = projectFallbacks[card.dataset.lightbox] || 'assets/project-tarneit.jpg';
-      lbImg.src = card.dataset.lightbox;
-      lbImg.alt = card.dataset.caption || 'Vanguard Fencing project';
-    }
-    if (lbCaption) lbCaption.textContent = card.dataset.caption || '';
+    lbImg.src = card.dataset.lightbox;
+    lbImg.alt = card.dataset.caption || 'Vanguard Fencing project';
+    lbCaption.textContent = card.dataset.caption || '';
     lightbox.showModal();
   }));
   qs('.lightbox-close')?.addEventListener('click', () => lightbox?.close());

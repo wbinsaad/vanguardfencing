@@ -54,7 +54,7 @@ h3{font-size:1rem}
 .btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;padding:0 22px;border:1px solid transparent;border-radius:10px;font-weight:800;font-size:.88rem;letter-spacing:.005em;transition:transform .18s ease,background .18s ease,border-color .18s ease,box-shadow .18s ease}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--green-850);color:#fff}.btn-primary:hover{background:var(--green-950);box-shadow:0 8px 24px rgba(6,38,31,.16)}.btn-accent{background:var(--lime);color:#102012}.btn-accent:hover{background:#95c94e}.btn-ghost{border-color:rgba(255,255,255,.7);color:#fff;background:rgba(7,25,20,.18)}.btn-ghost:hover{background:rgba(255,255,255,.12)}.btn-outline{border-color:var(--green-850);background:#fff;color:var(--green-850)}.btn.small{min-height:40px;padding:0 16px;font-size:.8rem}.text-link{display:inline-flex;align-items:center;gap:8px;color:var(--green-800);font-weight:800;font-size:.9rem}.text-link span{transition:transform .18s}.text-link:hover span{transform:translateX(3px)}
 
 /* Hero */
-.hero{position:relative;min-height:590px;overflow:hidden;background:var(--green-950);color:#fff;display:flex;align-items:center}.hero-media{position:absolute;inset:0;background-image:url("https://vanguardfencing.com.au/images/projects/aluminium-slat-vertical-black.jpg"),url("assets/hero.jpg");background-position:center,center;background-size:cover,cover;background-repeat:no-repeat,no-repeat;transform:scale(1.005)}.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,21,17,.95) 0%,rgba(5,26,20,.85) 32%,rgba(7,30,24,.30) 66%,rgba(7,30,24,.08) 100%),linear-gradient(0deg,rgba(4,22,17,.12),rgba(4,22,17,.12))}.hero-inner{position:relative;z-index:2;padding:86px 0 102px}.hero-copy{max-width:610px}.hero h1{font-size:clamp(3.45rem,6.5vw,5.8rem);letter-spacing:-.055em;margin-bottom:22px}.hero h1 span{color:var(--lime)}.hero-lede{font-size:1.15rem;max-width:590px;color:#edf5f0;margin-bottom:30px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap}.hero-note{font-size:.82rem;color:#cad8d1;margin:22px 0 0}.hero-note span{margin:0 6px;color:var(--lime)}
+.hero{position:relative;min-height:590px;overflow:hidden;background:var(--green-950);color:#fff;display:flex;align-items:center}.hero-media{position:absolute;inset:0;background:url("assets/hero.jpg") center/cover no-repeat;transform:scale(1.005)}.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,21,17,.95) 0%,rgba(5,26,20,.85) 32%,rgba(7,30,24,.30) 66%,rgba(7,30,24,.08) 100%),linear-gradient(0deg,rgba(4,22,17,.12),rgba(4,22,17,.12))}.hero-inner{position:relative;z-index:2;padding:86px 0 102px}.hero-copy{max-width:610px}.hero h1{font-size:clamp(3.45rem,6.5vw,5.8rem);letter-spacing:-.055em;margin-bottom:22px}.hero h1 span{color:var(--lime)}.hero-lede{font-size:1.15rem;max-width:590px;color:#edf5f0;margin-bottom:30px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap}.hero-note{font-size:.82rem;color:#cad8d1;margin:22px 0 0}.hero-note span{margin:0 6px;color:var(--lime)}
 
 /* Proof */
 .proof-strip{background:var(--green-900);color:#fff}.proof-grid{display:grid;grid-template-columns:repeat(4,1fr)}.proof-item{min-height:96px;display:flex;align-items:center;gap:14px;padding:20px 24px;border-right:1px solid rgba(255,255,255,.12)}.proof-item:first-child{border-left:1px solid rgba(255,255,255,.12)}.proof-item strong,.proof-item small{display:block}.proof-item strong{font-size:.91rem}.proof-item small{font-size:.72rem;color:#c8d6cf;margin-top:4px}.icon-ring{width:38px;height:38px;border:1.5px solid var(--lime);border-radius:50%;display:grid;place-items:center;color:var(--lime);flex:0 0 auto;font-weight:900}
@@ -81,7 +81,7 @@ h3{font-size:1rem}
 .trust-grid{display:grid;grid-template-columns:.9fr 1.1fr 1.35fr;gap:18px}.trust-card{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:#fff;box-shadow:var(--shadow-soft)}.google-row{display:flex;gap:14px;align-items:center;margin:18px 0}.google-g{font-size:2rem;font-weight:900;background:linear-gradient(135deg,#4285f4 20%,#ea4335 45%,#fbbc05 66%,#34a853 82%);-webkit-background-clip:text;color:transparent}.google-row strong,.google-row small{display:block}.google-row small{color:var(--muted);font-size:.8rem}.trust-note{font-size:.83rem;color:var(--muted)}.area-list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 16px;margin:18px 0}.area-list span{font-size:.83rem}.area-list span:before{content:"✓";color:var(--green-600);font-weight:900;margin-right:7px}.postcode-label{font-size:.78rem;font-weight:750;display:block;margin:14px 0 7px}.postcode-row{display:flex;gap:8px}.postcode-row input{min-width:0;flex:1;height:42px;border:1px solid var(--line-strong);border-radius:9px;padding:0 12px}.area-result{font-size:.8rem;min-height:20px;color:var(--green-700);margin:9px 0 0}.accordion{border-top:1px solid var(--line)}.faq-item{border-bottom:1px solid var(--line)}.faq-item button{width:100%;border:0;background:#fff;padding:13px 0;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:700;font-size:.84rem}.faq-item button i{font-style:normal;color:var(--green-700);font-size:1.15rem}.faq-item div p{font-size:.82rem;color:var(--muted);padding:0 0 14px;margin:0}
 
 /* Final CTA */
-.final-cta{position:relative;background:var(--green-950);color:#fff;overflow:hidden}.final-cta-media{position:absolute;inset:0;background-image:url("https://vanguardfencing.com.au/images/projects/timber-capped-paling-derrimut.jpg"),url("assets/hero.jpg");background-position:right center,right center;background-size:55% auto,55% auto;background-repeat:no-repeat,no-repeat}.final-cta-overlay{position:absolute;inset:0;background:linear-gradient(90deg,var(--green-950) 0%,rgba(6,38,31,.98) 47%,rgba(6,38,31,.55) 74%,rgba(6,38,31,.28) 100%)}.final-cta-inner{position:relative;z-index:2;min-height:290px;padding:56px 0;display:flex;align-items:center;justify-content:space-between;gap:42px}.final-cta h2{margin-bottom:10px}.final-cta p:not(.eyebrow){max-width:600px;color:#d7e4dc;margin-bottom:0}.final-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.final-cta{position:relative;background:var(--green-950);color:#fff;overflow:hidden}.final-cta-media{position:absolute;inset:0;background:url("assets/hero.jpg") right center/55% auto no-repeat}.final-cta-overlay{position:absolute;inset:0;background:linear-gradient(90deg,var(--green-950) 0%,rgba(6,38,31,.98) 47%,rgba(6,38,31,.55) 74%,rgba(6,38,31,.28) 100%)}.final-cta-inner{position:relative;z-index:2;min-height:290px;padding:56px 0;display:flex;align-items:center;justify-content:space-between;gap:42px}.final-cta h2{margin-bottom:10px}.final-cta p:not(.eyebrow){max-width:600px;color:#d7e4dc;margin-bottom:0}.final-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
 
 /* Footer */
 .footer{background:#111917;color:#dbe4df;padding:52px 0 18px}.footer-grid{display:grid;grid-template-columns:1.45fr 1fr 1fr 1fr;gap:42px}.footer-brand{color:#fff;margin-bottom:18px}.footer-grid p{font-size:.84rem;color:#aebdb5;max-width:270px}.footer-grid h3{font-size:.77rem;text-transform:uppercase;letter-spacing:.1em;color:#fff;margin-bottom:14px}.footer-grid a,.footer-grid span{display:block;color:#b9c6bf;font-size:.82rem;margin:7px 0}.footer-grid a:hover{color:#fff}.footer-grid .muted{color:#75877e}.footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-top:18px;display:flex;justify-content:space-between;gap:24px;color:#83948b;font-size:.76rem}.footer-bottom a{color:#9fb0a7}
@@ -137,12 +137,84 @@ dialog{border:0;padding:0}.quote-dialog{width:min(720px,calc(100% - 28px));borde
   .area-list{grid-template-columns:1fr}.postcode-row{flex-direction:column}.postcode-row .btn{width:100%}
   .footer-grid{grid-template-columns:1fr}.footer-grid>div:last-child{grid-column:auto}
 }
+.hero-upload.is-dragging .hero-upload-ui{border-color:var(--lime);box-shadow:0 0 0 3px rgba(131,185,63,.16)}
 
-/* Production photography: original Vanguard source images are loaded from the live site, with local prototype fallbacks only when offline. */
-img { image-rendering: auto; }
-.solution-card img, .project-card img, .project-feature img, .why-media img { object-fit: cover; object-position: center; }
-.solution-card:nth-child(1) img { object-position: 58% center; }
-.solution-card:nth-child(2) img { object-position: 45% center; }
-.solution-card:nth-child(3) img { object-position: 65% center; }
-.solution-card:nth-child(4) img { object-position: center 42%; }
-.why-media img { object-position: 44% center; }
+/* APPROVED HERO FORM ALIGNMENT — scoped to hero only */
+.hero-quote-card{
+  background:rgba(255,255,255,.985);
+  color:var(--ink);
+  border:1px solid rgba(255,255,255,.72);
+  border-radius:18px;
+  padding:30px;
+  box-shadow:0 24px 70px rgba(0,0,0,.24);
+  backdrop-filter:blur(8px);
+}
+.hero-quote-head{margin-bottom:18px}
+.hero-quote-head h2{font-size:1.95rem;letter-spacing:-.025em;margin:0 0 6px;color:var(--green-900)}
+.hero-quote-head p{margin:0;color:var(--muted);font-size:.86rem;line-height:1.45}
+.hero-quote-head a{color:inherit;text-decoration:none}
+.hero-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hero-form-grid label{display:block;min-width:0}
+.hero-form-grid label > span:first-child{display:block;font-size:.74rem;font-weight:750;margin:0 0 5px;color:#26352f}
+.hero-form-grid label small{font-weight:500;color:var(--muted);font-size:inherit}
+.hero-form-grid label span.required{display:inline;color:#cc5445;margin-left:1px}
+.hero-form-grid input:not([type="file"]),
+.hero-form-grid select{
+  width:100%;height:45px;border:1px solid var(--line-strong);border-radius:9px;
+  background:#fff;color:var(--ink);padding:0 11px;font:inherit;font-size:.85rem;
+}
+.hero-form-grid input:not([type="file"]):focus,
+.hero-form-grid select:focus{outline:3px solid rgba(0,95,204,.22);outline-offset:1px;border-color:#005fcc}
+.hero-upload{position:relative}
+.hero-upload input[type="file"]{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}
+.hero-upload .hero-upload-ui{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:45px;
+  border:1px solid var(--line-strong);border-radius:9px;background:#fff;padding:0 11px;
+  font-size:.82rem;color:#58675f;
+}
+.hero-upload .hero-upload-main{display:block;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0;font-size:.82rem;font-weight:650;color:#394941}
+.hero-upload-ui small{font-size:.73rem;color:#7a867f;white-space:nowrap}
+.hero-upload.is-dragging .hero-upload-ui{border-color:var(--lime);box-shadow:0 0 0 3px rgba(131,185,63,.16)}
+.hero-form-submit{width:100%;margin-top:14px;min-height:48px;background:#5a972d;border-color:#5a972d}
+.hero-form-submit:hover{background:#4c8325;border-color:#4c8325}
+.hero-form-privacy{margin:12px 0 0;display:flex;justify-content:center;align-items:flex-start;gap:10px;text-align:center;color:var(--muted);font-size:.74rem;line-height:1.45}
+.hero-form-privacy span:first-child{font-size:1rem;line-height:1}
+.hero-form-success{margin-top:12px;border:1px solid #b7d4c0;background:#edf7ef;color:var(--green-850);border-radius:10px;padding:10px 12px;font-size:.76rem}
+.hero-form-success strong,.hero-form-success span{display:block}
+.hero-form-success span{margin-top:2px;color:var(--green-700)}
+
+@media (min-width:1400px){
+  .hero-inner{
+    display:grid;
+    grid-template-columns:670px 500px;
+    align-items:center;
+    gap:180px;
+    width:min(1424px,calc(100% - 48px));
+    margin-inline:auto;
+    padding:28px 0 30px;
+  }
+  .hero-copy{max-width:610px}
+}
+@media (min-width:901px) and (max-width:1399px){
+  .hero-inner{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(390px,430px);
+    align-items:center;
+    gap:clamp(32px,4vw,56px);
+    width:var(--shell);
+    margin-inline:auto;
+    padding:36px 0 40px;
+  }
+  .hero-copy{max-width:610px}
+}
+@media (max-width:900px){
+  .hero{min-height:auto}
+  .hero-inner{display:block;width:var(--shell);margin-inline:auto;padding-bottom:54px}
+  .hero-quote-card{margin-top:30px;padding:22px}
+}
+@media (max-width:560px){
+  .hero-form-grid{grid-template-columns:1fr}
+  .hero-quote-card{border-radius:15px;padding:20px 16px}
+  .hero-quote-head h2{font-size:1.5rem}
+  .hero-upload .hero-upload-ui{align-items:flex-start;flex-direction:column;justify-content:center;padding-block:9px}
+}

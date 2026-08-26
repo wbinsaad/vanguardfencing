@@ -66,14 +66,36 @@
       <div class="shell hero-inner">
         <div class="hero-copy reveal">
           <p class="eyebrow light">Melbourne fencing specialists</p>
-          <h1 id="hero-title">Stronger fences.<br><span>Better spaces.</span></h1>
+          <h1 id="hero-title">Stronger<br>fences.<br><span>Better spaces.</span></h1>
           <p class="hero-lede">Colorbond, timber paling, aluminium slat, pool fencing and gates, supplied and installed across Melbourne by a local, owner-operated team. Clear written quotes and no hidden extras.</p>
           <div class="hero-actions">
-            <button class="btn btn-accent js-open-quote" type="button">Request a Free Quote</button>
+            <button class="btn btn-accent js-focus-hero-quote" type="button">Request a Free Quote</button>
             <a class="btn btn-ghost" href="#projects">View Recent Projects</a>
           </div>
           <p class="hero-note">Free site measure <span aria-hidden="true">•</span> Written, itemised quote <span aria-hidden="true">•</span> Photos optional</p>
         </div>
+
+        <form class="hero-quote-card reveal" id="hero-quote-form" novalidate>
+          <div class="hero-quote-head">
+            <h2>Get a Free Quote</h2>
+            <p>Most quotes returned within 24 hours. Or call <a href="tel:1300914010">1300 914 010</a>.</p>
+          </div>
+          <div class="hero-form-grid">
+            <label><span>Your suburb<span class="required">*</span></span><input name="suburb" autocomplete="address-level2" required placeholder="e.g. Epping"></label>
+            <label><span>Service<span class="required">*</span></span><select name="service" required><option value="">Select a service</option><option>Colorbond Fencing</option><option>Timber Paling Fencing</option><option>Aluminium Slat Fencing</option><option>Pool Fencing</option><option>Automatic Gates</option><option>Fence Repairs</option><option>Commercial Fencing</option></select></label>
+            <label><span>Approx. metres</span><input name="metres" inputmode="decimal" placeholder="e.g. 25"></label>
+            <label><span>When?</span><select name="when"><option value="">Select timeframe</option><option>ASAP</option><option>Within 2 weeks</option><option>Within 1 month</option><option>Just researching</option></select></label>
+            <label><span>Old fence removal?</span><select name="removal"><option value="">Select an option</option><option>Yes</option><option>No</option><option>Not sure</option></select></label>
+            <label><span>Gate required?</span><select name="gate"><option value="">Select an option</option><option>Yes</option><option>No</option><option>Not sure</option></select></label>
+            <label><span>Your name<span class="required">*</span></span><input name="name" autocomplete="name" required placeholder="Full name"></label>
+            <label><span>Phone<span class="required">*</span></span><input name="phone" type="tel" autocomplete="tel" required placeholder="Mobile number"></label>
+            <label class="span-2"><span>Email</span><input name="email" type="email" autocomplete="email" placeholder="email@example.com"></label>
+            <label class="span-2 hero-upload"><span>Photo <small>(optional, speeds up the quote)</small></span><input name="photo" type="file" accept="image/*" multiple><span class="hero-upload-ui"><span class="hero-upload-main">↥&nbsp; Choose files or drag and drop</span><small>JPG, PNG up to 10MB</small></span></label>
+          </div>
+          <button class="btn btn-primary hero-form-submit" type="submit">Send My Free Quote Request</button>
+          <p class="hero-form-privacy"><span aria-hidden="true">🛡</span><span>By submitting you agree to be contacted about your enquiry.<br>We never share your details.</span></p>
+          <div class="hero-form-success" id="hero-form-success" hidden role="status"><strong>Thanks — your request is ready.</strong><span>This demo validates the form but does not send data yet.</span></div>
+        </form>
       </div>
     </section>
 
@@ -115,9 +137,18 @@
         </div>
 
         <div class="mini-service-grid reveal" aria-label="Additional services">
-          <a class="mini-service" href="#quote"><span class="mini-icon" aria-hidden="true">▣</span><span><strong>Automatic Gates</strong><small>Secure and convenient</small></span><b aria-hidden="true">→</b></a>
-          <a class="mini-service" href="#quote"><span class="mini-icon" aria-hidden="true">⌕</span><span><strong>Fence Repairs</strong><small>Fix, replace or upgrade</small></span><b aria-hidden="true">→</b></a>
-          <a class="mini-service" href="#quote"><span class="mini-icon" aria-hidden="true">▦</span><span><strong>Commercial Fencing</strong><small>Secure premises &amp; sites</small></span><b aria-hidden="true">→</b></a>
+          <a class="solution-card additional-service-card js-open-quote" href="#quote">
+            <img loading="lazy" decoding="async" src="assets/automatic-gates.png" alt="Automatic sliding driveway gate from Vanguard Fencing website" width="800" height="520">
+            <div class="card-body"><h3>Automatic Gates</h3><p>Secure and convenient</p><span class="text-link">Get a quote <span>→</span></span></div>
+          </a>
+          <a class="solution-card additional-service-card js-open-quote" href="#quote">
+            <img loading="lazy" decoding="async" src="assets/fence-repairs.png" alt="Fence repair project from Vanguard Fencing website" width="800" height="520">
+            <div class="card-body"><h3>Fence Repairs</h3><p>Fix, replace or upgrade</p><span class="text-link">Get a quote <span>→</span></span></div>
+          </a>
+          <a class="solution-card additional-service-card js-open-quote" href="#quote">
+            <img loading="lazy" decoding="async" src="assets/commercial-fencing.png" alt="Commercial fencing project from Vanguard Fencing website" width="800" height="520">
+            <div class="card-body"><h3>Commercial Fencing</h3><p>Secure premises &amp; sites</p><span class="text-link">Get a quote <span>→</span></span></div>
+          </a>
         </div>
       </div>
     </section>
