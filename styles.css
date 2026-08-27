@@ -413,3 +413,58 @@ body{font-family:"Inter",ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe U
   .solution-card .card-media{height:100%;aspect-ratio:auto}
 }
 @media (max-width:780px){.solution-card{min-height:127px}}
+
+
+/* Recent Work before/after comparison — isolated to the projects section. */
+.before-after-head{align-items:flex-end}
+.before-after-head .section-intro{max-width:680px;margin:10px 0 0;color:var(--muted);font-size:.96rem}
+.before-after-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.before-after-card{min-width:0;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-soft)}
+.before-after-media{--position:50%;position:relative;aspect-ratio:4/3;overflow:hidden;background:#e9eeeb;isolation:isolate;touch-action:pan-y}
+.ba-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.ba-before-layer{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--position)) 0 0);will-change:clip-path}
+.ba-badge{position:absolute;top:14px;z-index:4;padding:7px 10px;border-radius:5px;color:#fff;font-size:.72rem;font-weight:850;letter-spacing:.04em;text-transform:uppercase;box-shadow:0 4px 14px rgba(0,0,0,.14);pointer-events:none}
+.ba-badge-before{left:14px;background:#df2c26}
+.ba-badge-after{right:14px;background:#1c7a3b}
+.ba-divider{position:absolute;z-index:3;top:0;bottom:0;left:var(--position);width:3px;background:#fff;transform:translateX(-50%);box-shadow:0 0 0 1px rgba(0,0,0,.08);pointer-events:none}
+.ba-handle{position:absolute;z-index:4;left:var(--position);top:50%;width:50px;height:50px;border-radius:50%;background:#fff;display:grid;place-items:center;transform:translate(-50%,-50%);box-shadow:0 5px 18px rgba(0,0,0,.22);pointer-events:none;transition:box-shadow .18s ease,transform .18s ease}
+.ba-handle svg{width:27px;height:27px;fill:none;stroke:var(--green-900);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ba-range{position:absolute;z-index:5;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;-webkit-appearance:none;appearance:none;background:transparent;touch-action:pan-y}
+.ba-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:58px;height:58px;background:transparent;border:0;cursor:ew-resize}
+.ba-range::-moz-range-thumb{width:58px;height:58px;background:transparent;border:0;cursor:ew-resize}
+.ba-range:focus-visible + .ba-divider + .ba-handle{outline:3px solid var(--focus,#005fcc);outline-offset:3px;box-shadow:0 5px 18px rgba(0,0,0,.22)}
+.before-after-body{padding:20px 22px 22px}
+.project-pill{display:inline-flex;align-items:center;min-height:32px;padding:5px 12px;margin-bottom:13px;border:1px solid var(--line);border-radius:999px;background:#f4f6f5;color:#53615b;font-size:.76rem;font-weight:750}
+.before-after-body h3{font-size:1.22rem;line-height:1.2;margin:0 0 9px;letter-spacing:-.02em}
+.before-after-body p{min-height:82px;margin:0 0 16px;color:var(--muted);font-size:.91rem;line-height:1.55}
+.before-after-body .text-link{font-size:.85rem}
+.before-after-help{margin:18px 0 0;text-align:center;color:var(--muted);font-size:.78rem}
+
+@media (max-width:1050px){
+  .before-after-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .before-after-card:last-child{grid-column:1/-1;width:min(100%,480px);justify-self:center}
+  .before-after-body p{min-height:0}
+}
+
+@media (max-width:780px){
+  .before-after-head{align-items:flex-start}
+  .before-after-grid{grid-template-columns:1fr;gap:18px}
+  .before-after-card:last-child{grid-column:auto;width:100%;justify-self:stretch}
+  .before-after-media{aspect-ratio:4/3}
+  .ba-handle{width:48px;height:48px}
+  .ba-range::-webkit-slider-thumb{width:56px;height:56px}
+  .ba-range::-moz-range-thumb{width:56px;height:56px}
+  .before-after-body{padding:18px 18px 20px}
+  .before-after-body h3{font-size:1.12rem}
+  .before-after-body p{font-size:.86rem;line-height:1.5}
+  .before-after-help{text-align:left;font-size:.74rem}
+}
+
+@media (max-width:430px){
+  .before-after-grid{gap:16px}
+  .before-after-card{border-radius:15px}
+  .ba-badge{top:10px;padding:6px 8px;font-size:.66rem}
+  .ba-badge-before{left:10px}.ba-badge-after{right:10px}
+  .before-after-body{padding:16px}
+  .project-pill{margin-bottom:11px;font-size:.72rem}
+}

@@ -250,6 +250,22 @@
     areaToggle.textContent = expanded ? 'Show all service areas' : 'Show fewer service areas';
   });
 
+  // Recent Work before/after sliders. Native range controls keep mouse, touch, and keyboard support.
+  qsa('.before-after-media').forEach((comparison) => {
+    const range = qs('.ba-range', comparison);
+    if (!range) return;
+
+    const updateComparison = () => {
+      const value = Math.max(0, Math.min(100, Number(range.value) || 0));
+      comparison.style.setProperty('--position', `${value}%`);
+      range.setAttribute('aria-valuetext', `${value}% before, ${100 - value}% after`);
+    };
+
+    range.addEventListener('input', updateComparison);
+    range.addEventListener('change', updateComparison);
+    updateComparison();
+  });
+
   // Project lightbox.
   const lightbox = qs('#lightbox');
   const lbImg = qs('#lightbox-img');
