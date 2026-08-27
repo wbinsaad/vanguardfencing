@@ -182,10 +182,10 @@ dialog{border:0;padding:0}.quote-dialog{width:min(720px,calc(100% - 28px));borde
 @media (min-width:1400px){
   .hero-inner{
     display:grid;
-    grid-template-columns:670px 500px;
+    grid-template-columns:minmax(0,610px) minmax(390px,500px);
     align-items:center;
-    gap:180px;
-    width:min(1424px,calc(100% - 48px));
+    gap:clamp(48px,6vw,96px);
+    width:min(1280px,calc(100% - 48px));
     margin-inline:auto;
     padding:28px 0 30px;
   }
