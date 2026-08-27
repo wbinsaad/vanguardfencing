@@ -240,7 +240,6 @@ body{font-family:"Inter",ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe U
 .hero-quote-card{padding:28px}
 .hero-quote-head{margin-bottom:16px}
 .hero-quote-head h2{margin-bottom:5px}
-.form-step{display:none;margin:0 0 7px;color:var(--green-700);font-size:.72rem;font-weight:750;letter-spacing:.02em}
 .hero-form-grid{gap:12px}
 .hero-form-grid label>span:first-child{font-size:.76rem}
 .hero-form-grid label small{font-weight:500;color:var(--muted)}
@@ -323,7 +322,6 @@ body{font-family:"Inter",ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe U
 @media (max-width:780px){
   body.has-mobile-sticky{padding-bottom:64px}
   .hero h1{font-size:clamp(2.65rem,11.5vw,3rem)}
-  .form-step{display:block}
   .hero-quote-card{padding:20px 18px}
   .hero-form-grid input:not([type="file"]),.hero-form-grid select{height:52px;font-size:16px}
   .hero-form-submit{min-height:54px;font-size:.92rem}

@@ -51,7 +51,6 @@
   // Progressive optional quote details.
   const detailsToggle = qs('#hero-details-toggle');
   const optionalFields = qs('#hero-optional-fields');
-  const formStep = qs('#hero-form-step');
 
   if (detailsToggle && optionalFields) {
     const setDetailsState = (expanded) => {
@@ -61,7 +60,6 @@
       if (icon) icon.textContent = expanded ? '−' : '+';
       const label = qs('span', detailsToggle);
       if (label) label.textContent = expanded ? 'Hide extra job details' : 'Add more job details'
-      if (formStep) formStep.textContent = expanded ? 'Step 2 of 2 · Extra job details' : 'Step 1 of 2 · Contact & service'
     };
 
     // Ensure the page always starts in the correct collapsed state.
