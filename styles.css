@@ -125,7 +125,7 @@ dialog{border:0;padding:0}.quote-dialog{width:min(720px,calc(100% - 28px));borde
 @media (max-width:430px){
   :root{--shell:calc(100% - 28px)}
   .utility-location{display:none}.utility-inner{justify-content:center}.utility-item{font-size:.75rem}
-  .hero{min-height:620px}.hero-inner{padding-top:150px}.hero h1{font-size:3.35rem}.hero-lede{font-size:.94rem}.hero-note{font-size:.74rem}
+  .hero{min-height:620px}.hero-inner{padding-top:80px}.hero h1{font-size:3.35rem}.hero-lede{font-size:.94rem}.hero-note{font-size:.74rem}
   .proof-grid{grid-template-columns:repeat(2,1fr)}.proof-item{gap:9px;padding-inline:9px}.proof-item small{display:none}
   h2{font-size:2rem}
   .solution-card{grid-template-columns:106px 1fr}.solution-card .card-body p{display:none}
