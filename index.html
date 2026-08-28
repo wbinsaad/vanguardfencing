@@ -109,7 +109,7 @@
             <label><span>Service</span><select name="service" required><option value="">Select a service</option><option>Colorbond Fencing</option><option>Timber Paling Fencing</option><option>Aluminium Slat Fencing</option><option>Pool Fencing</option><option>Automatic Gates</option><option>Fence Repairs</option><option>Commercial Fencing</option></select><small class="field-error" data-error-for="service" aria-live="polite"></small></label>
             <label><span>Your name</span><input name="name" autocomplete="name" required placeholder="Full name"><small class="field-error" data-error-for="name" aria-live="polite"></small></label>
             <label><span>Phone</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="04XX XXX XXX"><small class="field-error" data-error-for="phone" aria-live="polite"></small></label>
-            <label class="span-2 hero-upload"><span>Fence photos <small>— optional</small></span><input name="photo" type="file" accept="image/jpeg,image/png,image/webp,image/heic" multiple><span class="hero-upload-ui"><span class="hero-upload-main"><svg class="ui-icon" aria-hidden="true"><use href="#icon-upload"></use></svg> Take or choose photos</span><small>JPG, PNG, WebP · max 10MB each</small></span><span class="upload-preview" id="upload-preview" aria-live="polite"></span><small class="field-error" data-error-for="photo" aria-live="polite"></small></label>
+            <label class="span-2 hero-upload"><span>Fence photos <small>— optional</small></span><input name="photo" type="file" accept="image/jpeg,image/png,image/webp,image/heic" multiple><span class="hero-upload-ui"><span class="hero-upload-main"><svg class="ui-icon" aria-hidden="true"><use href="#icon-upload"></use></svg> Take or choose photos</span><small>JPG, PNG, WebP or HEIC · max 10MB each</small></span><span class="upload-preview" id="upload-preview" aria-live="polite"></span><small class="field-error" data-error-for="photo" aria-live="polite"></small></label>
           </div>
           <button class="hero-details-toggle" id="hero-details-toggle" type="button" aria-expanded="false" aria-controls="hero-optional-fields"><span>Add more job details</span><small>Optional</small><b aria-hidden="true">+</b></button>
           <div class="hero-form-grid hero-optional-fields" id="hero-optional-fields" hidden>
@@ -121,7 +121,7 @@
           </div>
           <button class="btn btn-primary hero-form-submit" type="submit">Request My Free Quote</button>
           <p class="hero-form-privacy"><svg class="ui-icon" aria-hidden="true"><use href="#icon-shield"></use></svg><span>Used only to respond to your enquiry. We never share your details.</span></p>
-          <div class="hero-form-success" id="hero-form-success" hidden role="status"><strong>Thanks — your request is ready.</strong><span>This front-end demo validates the form. Connect it to your form endpoint before launch.</span></div>
+          <div class="hero-form-success" id="hero-form-success" hidden role="status"><strong>Thanks — we’ve received your quote request.</strong><span>We’ll review the details you provided and contact you using the information above. If you added photos, we’ll use them to better understand the job before we speak with you.</span><a href="tel:1300914010">Need to speak with us sooner? Call 1300 914 010.</a></div>
         </form>
       </div>
     </section>
@@ -336,15 +336,14 @@
     <section class="section section-soft" id="trust">
       <div class="shell trust-grid">
         <article class="trust-card proof-card reveal" id="reviews">
-          <p class="eyebrow">Local proof</p>
-          <h3>Established local work, not placeholder testimonials.</h3>
+          <p class="eyebrow">Local experience</p>
+          <h3>Built on real local work.</h3>
           <div class="proof-stats">
             <div><strong>500+</strong><span>Fences installed</span></div>
             <div><strong>17</strong><span>Suburbs serviced</span></div>
             <div><strong>Owner-operated</strong><span>Local crew</span></div>
           </div>
-          <p class="trust-note">These are current business proof points published by Vanguard. Add review text only when it can be linked to a genuine review source.</p>
-          <a class="btn btn-outline small" href="#projects">See recent work</a>
+           <a class="btn btn-outline small" href="#projects">See recent work</a>
         </article>
 
         <article class="trust-card reveal" id="areas">
@@ -361,7 +360,7 @@
         <article class="trust-card faq-card reveal" id="faq">
           <p class="eyebrow">Frequently asked questions</p>
           <div class="accordion">
-            <div class="faq-item"><button type="button" aria-expanded="false"><span>How much does fencing cost?</span><i>+</i></button><div hidden><p>Price depends on material, length, height, access, slope, removal, gates and site conditions. Vanguard's current site publishes indicative ranges and confirms final pricing in a written quote.</p></div></div>
+            <div class="faq-item"><button type="button" aria-expanded="false"><span>How much does fencing cost?</span><i>+</i></button><div hidden><p>Price depends on material, length, height, access, slope, removal, gates and site conditions. The indicative prices on this page are a guide; final pricing is confirmed in a written quote.</p></div></div>
             <div class="faq-item"><button type="button" aria-expanded="false"><span>Colorbond or timber — which is best?</span><i>+</i></button><div hidden><p>Colorbond suits low-maintenance privacy; timber offers a natural, traditional look and can be easier to repair in smaller sections. The right choice depends on the property and priorities.</p></div></div>
             <div class="faq-item"><button type="button" aria-expanded="false"><span>Can you remove my existing fence?</span><i>+</i></button><div hidden><p>Yes. Existing-fence removal can be included as a separate line item so you can see what is covered.</p></div></div>
             <div class="faq-item"><button type="button" aria-expanded="false"><span>Can you install gates?</span><i>+</i></button><div hidden><p>Yes — pedestrian, swing and automatic sliding gate options can be scoped with the fence.</p></div></div>
@@ -409,7 +408,7 @@
       <div><h3>Fencing Options</h3><a href="#solutions">Colorbond Fencing</a><a href="#solutions">Timber Paling</a><a href="#solutions">Aluminium Slat</a><a href="#solutions">Pool Fencing</a><a href="#solutions">Automatic Gates</a></div>
       <div><h3>Company</h3><a href="#why">Why Vanguard</a><a href="#process">How It Works</a><a href="#projects">Projects</a><a href="#faq">Advice</a><a href="#contact">Contact</a></div>
     </div>
-    <div class="shell footer-bottom"><span>© 2026 Vanguard Fencing. All rights reserved.</span><span><a href="#">Privacy Policy</a> · <a href="#">Terms &amp; Conditions</a></span></div>
+    <div class="shell footer-bottom"><span>© 2026 Vanguard Fencing. All rights reserved.</span></div>
   </footer>
 
 

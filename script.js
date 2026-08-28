@@ -88,13 +88,14 @@
     const value = String(field.value || '').trim();
     let message = '';
 
-    if (field.name === 'suburb' && !value) message = 'Enter your suburb.';
+    if (field.name === 'suburb' && !value) message = 'Enter your suburb or postcode.';
     if (field.name === 'service' && !value) message = 'Choose the fencing service you are interested in.';
     if (field.name === 'name' && !value) message = 'Enter your name.';
     if (field.name === 'phone') {
       const digits = value.replace(/\D/g, '');
+      const validAustralianPhone = /^(?:0[23478]\d{8}|61[23478]\d{8}|13\d{4}|1300\d{6}|1800\d{6})$/.test(digits);
       if (!value) message = 'Enter a phone number we can use to contact you.';
-      else if (digits.length < 8 || digits.length > 12) message = 'Enter a valid phone number.';
+      else if (!validAustralianPhone) message = 'Enter a valid Australian phone number.';
     }
     if (field.name === 'email' && value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
       message = 'Enter a valid email address, or leave this optional field blank.';
@@ -124,10 +125,15 @@
     if (!uploadInput || !uploadPreview || !uploadMain) return true;
     const files = [...(uploadInput.files || [])];
     const tooLarge = files.find((file) => file.size > maxFileBytes);
-    const notImage = files.find((file) => file.type && !file.type.startsWith('image/'));
+    const supportedTypes = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/heic']);
+    const supportedExtension = /\.(?:jpe?g|png|webp|heic)$/i;
+    const unsupportedFile = files.find((file) => {
+      if (file.type) return !supportedTypes.has(file.type);
+      return !supportedExtension.test(file.name || '');
+    });
     let message = '';
-    if (tooLarge) message = `${tooLarge.name} is over 10MB.`;
-    else if (notImage) message = 'Choose image files only.';
+    if (tooLarge) message = 'This image is too large. Please choose an image under 10MB.';
+    else if (unsupportedFile) message = 'This file type isn’t supported. Please upload a JPG, PNG, WebP or HEIC image.';
 
     uploadLabel?.classList.toggle('has-error', Boolean(message));
     const node = errorNode('photo');
@@ -193,7 +199,7 @@
     if (submitter) {
       const original = submitter.textContent;
       submitter.disabled = true;
-      submitter.textContent = 'Request Ready ✓';
+      submitter.textContent = 'Request sent ✓';
       window.setTimeout(() => {
         submitter.disabled = false;
         submitter.textContent = original;
@@ -230,12 +236,12 @@
   qs('#check-area')?.addEventListener('click', () => {
     const value = (postcode?.value || '').trim();
     if (!/^\d{4}$/.test(value)) {
-      areaResult.textContent = 'Enter a 4-digit postcode and we’ll check the northern-suburbs list.';
+      areaResult.textContent = 'Enter a 4-digit postcode.';
       return;
     }
     areaResult.textContent = knownPostcodes.has(value)
-      ? 'This postcode is within or near Vanguard’s listed northern Melbourne service area. Confirm the exact address when requesting a quote.'
-      : 'This postcode is not in the quick-check list. Call or request a quote and Vanguard can confirm the address.';
+      ? 'That postcode is in or near our northern Melbourne service area. Send your address with your quote request and we’ll confirm.'
+      : 'That postcode may be outside our usual service area. Call us or send a quote request and we’ll confirm your address.';
   });
 
   // Mobile-only service-area disclosure.
